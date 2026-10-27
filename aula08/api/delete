@@ -1,0 +1,12 @@
+async function deletarPublicacao(id) {
+  try {
+    const resposta = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+      method: 'DELETE',
+    });
+    if (!resposta.ok) throw new Error();
+    // DELETE no JSONPlaceholder geralmente retorna um objeto vazio {}
+    Alert.alert('Sucesso', 'Publicação deletada com sucesso!');
+  } catch (e) {
+    Alert.alert('Erro', 'Não foi possível deletar.');
+  }
+}
